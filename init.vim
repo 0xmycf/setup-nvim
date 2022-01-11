@@ -46,7 +46,7 @@ Plug 'davidklsn/vim-sialoquent'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"misc
+" misc
 Plug 'tpope/vim-commentary'
 call plug#end()
 
@@ -79,6 +79,7 @@ let g:haskell_classic_highlighting = 1
 """ Dashboard settings ---------------------------
 let g:dashboard_default_executive = 'telescope'
 let g:dashboard_session_directory = '~/.config/nvim/session'
+" Thanks @Accieo! (github.com/Accieo)
 let g:dashboard_custom_header = [
   \'      /`á.ü          ',
   \'     /ü...ü`:á       ',
@@ -145,15 +146,12 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" COC settings
-source ~/.config/nvim/mycoc/mycocsettings.vim
-
 " Mapping to get out of terminal mode without killing it
 tnoremap <Esc> <C-\><C-n>
 
 " resizing splits
-nnoremap <silent> <Leader>+ :resize +1<CR>
-nnoremap <silent> <Leader>- :resize -1<CR>
+nnoremap <silent> <Leader>+         :resize +1<CR>
+nnoremap <silent> <Leader>-         :resize -1<CR>
 nnoremap <silent> <Leader><Leader>+ :vertical resize +1<CR>
 nnoremap <silent> <Leader><Leader>- :vertical resize -1<CR>
 
@@ -163,4 +161,7 @@ omap <leader>7 <Plug>(easymotion-tn)
 
 " Mappings for clearing the search
 noremap <leader>1 :noh<CR>
+
+" COC settings
+source ~/.config/nvim/mycoc/mycocsettings.vim
 
