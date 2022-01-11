@@ -81,4 +81,4 @@ session/*
 autoload/*
 !autoload/.keep
 *.hs
-
+.metals/*

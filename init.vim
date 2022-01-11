@@ -37,11 +37,23 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-stylishask'
 Plug 'godlygeek/tabular'
 
+" Julia
+Plug 'JuliaEditorSupport/julia-vim'
+
+" Kotlin saved for future use
+Plug 'udalov/kotlin-vim'
+
+" Scala
+Plug 'derekwyatt/vim-scala'
+
+" Java
+Plug 'uiiaoo/java-syntax.vim'
+
 " Colorschemes
 Plug 'wojciechkepka/vim-github-dark'
 Plug '0xmycf/Spacegray.vim'
 Plug 'davidklsn/vim-sialoquent'
-"
+
 " Other gui stuff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -103,6 +115,7 @@ set smartindent
 set spelllang=en,de
 set cursorline
 set number relativenumber
+set signcolumn=yes:1
 set ma
 
 """ Just a precaution ----------------------------
