@@ -49,6 +49,9 @@ Plug 'derekwyatt/vim-scala'
 " Java
 Plug 'uiiaoo/java-syntax.vim'
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 " Colorschemes
 Plug 'wojciechkepka/vim-github-dark'
 Plug '0xmycf/Spacegray.vim'
@@ -60,6 +63,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " misc
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 """ Sets the appropriate airline theme -----------
@@ -75,6 +79,7 @@ colorscheme spacegray
 map <silent> <C-m> :NERDTreeFocus<CR>
 map <silent> <C-t> :NERDTreeToggle<CR>
 let mapleader = " "
+let maplocalleader = " "
 map <silent> <C-c> <ESC>
 
 " This is just what the person also had
@@ -108,6 +113,7 @@ let g:dashboard_custom_header = [
 set guifont=MonoLisaRegularNerdFontCompleteMono:13
 set termguicolors
 set nowrap
+set textwidth=0
 set tabstop=4 softtabstop=4 shiftwidth=4
 set smarttab
 set expandtab
@@ -150,7 +156,7 @@ vnoremap ∆   :m '<-2<CR>gv=gv
 " vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " tab navigation
-nnoremap <TAB> :tabnext<CR>
+nnoremap <TAB>   :tabnext<CR>
 nnoremap <C-TAB> :tabprevious<CR>
 
 " telescope settings
@@ -177,4 +183,7 @@ noremap <leader>1 :noh<CR>
 
 " COC settings
 source ~/.config/nvim/mycoc/mycocsettings.vim
+
+" Vim settings
+source ~/.config/nvim/texsettings/texsettings.vim
 
