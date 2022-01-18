@@ -82,3 +82,5 @@ autoload/*
 !autoload/.keep
 *.hs
 .metals/*
+/spell/*
+

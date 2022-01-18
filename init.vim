@@ -52,6 +52,12 @@ Plug 'uiiaoo/java-syntax.vim'
 " LaTeX
 Plug 'lervag/vimtex'
 
+" Clojure
+Plug 'clojure-vim/clojure.vim'
+
+" JavaScript
+Plug 'pangloss/vim-javascript'
+
 " Colorschemes
 Plug 'wojciechkepka/vim-github-dark'
 Plug '0xmycf/Spacegray.vim'
@@ -73,11 +79,11 @@ source $HOME/.config/nvim/themes/airline.vim
 " NOTE: technically these settings are on by default for my version!
 let g:spacegray_low_contrast = 1
 let g:spacegray_use_italics  = 1
-" NOTE: This is my OWN verison of spacegray!
+" NOTE: This is my OWN version of spacegray!
 colorscheme spacegray
 
-map <silent> <C-m> :NERDTreeFocus<CR>
-map <silent> <C-t> :NERDTreeToggle<CR>
+noremap <silent> <C-m> :NERDTreeFocus<CR>
+noremap <silent> <C-t> :NERDTreeToggle<CR>
 let mapleader = " "
 let maplocalleader = " "
 map <silent> <C-c> <ESC>
@@ -106,8 +112,6 @@ let g:dashboard_custom_header = [
   \'     `\\««\ü.á«      ',
   \]
 
-" Some keybindings
- nmap <Leader>, :<C-u>SessionSave<CR>
 
 """ Basic settings -------------------------------
 set guifont=MonoLisaRegularNerdFontCompleteMono:13
@@ -118,7 +122,8 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
-set spelllang=en,de
+set spelllang=en_gb,de
+set spell
 set cursorline
 set number relativenumber
 set signcolumn=yes:1
@@ -129,6 +134,8 @@ set noswapfile
 
 """ Some Keymaps ---------------------------------
 
+nmap <Leader>, :<C-u>SessionSave<CR>
+
 " change between buffers
 map <silent> <C-h> <C-w>h
 map <silent> <C-j> <C-w>j
@@ -136,8 +143,8 @@ map <silent> <C-k> <C-w>k
 map <silent> <C-l> <C-w>l
 
 " buffer navigation
-map <silent> <S-h> :bnext<CR>
-map <silent> <S-l> :bprevious<CR>
+map <silent> <S-l> :bnext<CR>
+map <silent> <S-h> :bprevious<CR>
 
 " vscode like moving text around
 nnoremap º   :m .+1<CR>==
@@ -168,7 +175,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " Mapping to get out of terminal mode without killing it
 tnoremap <Esc> <C-\><C-n>
 
-" resizing splits
+" Re-sizing splits
 nnoremap <silent> <Leader>+         :resize +1<CR>
 nnoremap <silent> <Leader>-         :resize -1<CR>
 nnoremap <silent> <Leader><Leader>+ :vertical resize +1<CR>
