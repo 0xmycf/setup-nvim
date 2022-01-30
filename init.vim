@@ -58,10 +58,16 @@ Plug 'clojure-vim/clojure.vim'
 " JavaScript
 Plug 'pangloss/vim-javascript'
 
-" Colorschemes
-Plug 'wojciechkepka/vim-github-dark'
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Zen-Mode
+Plug 'Pocco81/TrueZen.nvim'
+
+"" Colorschemes
+" Plug 'wojciechkepka/vim-github-dark'
 Plug '0xmycf/Spacegray.vim'
-Plug 'davidklsn/vim-sialoquent'
+" Plug 'davidklsn/vim-sialoquent'
 
 " Other gui stuff
 Plug 'vim-airline/vim-airline'
@@ -188,9 +194,17 @@ omap <leader>7 <Plug>(easymotion-tn)
 " Mappings for clearing the search
 noremap <leader>1 :noh<CR>
 
+" Mapping for enabling the zen mode
+map <F12> :TZAtaraxis<CR>
+
+" Mapping for Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " COC settings
 source ~/.config/nvim/mycoc/mycocsettings.vim
 
 " Vim settings
 source ~/.config/nvim/texsettings/texsettings.vim
 
+" Zen settings
+source ~/.config/nvim/zen/zenconfig.vim

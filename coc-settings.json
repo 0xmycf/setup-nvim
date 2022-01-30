@@ -15,8 +15,7 @@
   "kotlin": {
     "command": "~/lsp/kotlin/server/bin/kotlin-language-server",
     "filetypes": ["kotlin"]
-    }
-  },
+    },
   "clojure-lsp": {
     "command": "bash",
     "args": ["-c", "clojure-lsp"],
@@ -24,7 +23,8 @@
     "rootPatterns": ["project.clj"],
     "additionalSchemes": ["jar", "zipfile"],
     "trace.server": "verbose",
-    "initializationOptions": {
+    "initializationOptions": {}
     }
-  }
+  },
+  "coc.preferences.formatOnType": true
 }
