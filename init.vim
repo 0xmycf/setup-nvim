@@ -53,13 +53,19 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'lervag/vimtex'
 
 " Clojure
-Plug 'clojure-vim/clojure.vim'
+" Plug 'clojure-vim/clojure.vim'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+
+" CSS inline colors
+Plug 'ap/vim-css-color'
+
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
 
 " Zen-Mode
 Plug 'Pocco81/TrueZen.nvim'

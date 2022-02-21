@@ -26,5 +26,9 @@
     "initializationOptions": {}
     }
   },
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "codeLens.enable": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "rust-analyzer.lens.implementations": false
 }

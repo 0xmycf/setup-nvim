@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+old="$IFS"
+IFS='+'
+str="$*"
+IFS=$old
+
+open "http://www.google.com/search?q=$str"
+
