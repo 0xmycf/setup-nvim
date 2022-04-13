@@ -70,14 +70,15 @@ Plug 'dart-lang/dart-vim-plugin'
 " Zen-Mode
 Plug 'Pocco81/TrueZen.nvim'
 
-"" Colorschemes
-" Plug 'wojciechkepka/vim-github-dark'
+" Colorschemes
 Plug '0xmycf/Spacegray.vim'
-" Plug 'davidklsn/vim-sialoquent'
 
 " Other gui stuff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Github Copilot
+Plug 'github/copilot.vim'
 
 " misc
 Plug 'tpope/vim-commentary'
@@ -102,10 +103,10 @@ map <silent> <C-c> <ESC>
 
 " This is just what the person also had
 filetype plugin indent on " required
-syntax on
+syntax enable
 
 """ Set a colorcolumn to grey for orientation ----
-" set colorcolumn=80
+" set colorcolumn=120
 " hi ColorColumn ctermbg=0 guibg=lightgrey
 
 """ HS Vim Settings ------------------------------
@@ -206,6 +207,11 @@ map <F12> :TZAtaraxis<CR>
 " Mapping for Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" Copilot settings
+" let g:copilot_filetypes = {
+"       \ 'markdown': v:true,
+"       \ }
+
 " COC settings
 source ~/.config/nvim/mycoc/mycocsettings.vim
 
@@ -214,3 +220,6 @@ source ~/.config/nvim/texsettings/texsettings.vim
 
 " Zen settings
 source ~/.config/nvim/zen/zenconfig.vim
+
+" snippets
+source ~/.config/nvim/snippets/mysnippets.vim
