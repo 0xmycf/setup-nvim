@@ -30,5 +30,6 @@
   "codeLens.enable": true,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
-  "rust-analyzer.lens.implementations": false
+  "rust-analyzer.lens.implementations": false,
+  "svelte.enable-ts-plugin": true
 }

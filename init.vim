@@ -1,11 +1,14 @@
 "download plug.vim from here: https://github.com/junegunn/vim-plug
 scriptencoding utf-8
-set fileencoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set encoding=utf-8
 language en_US
 
 set nocompatible " be iMproved, required
 filetype off     " required
+
+""" python ---------------------------------------
+let g:python3_host_prog = '/usr/bin/python3'
 
 """ install plugins with :PlugInstall ------------
 call plug#begin('~/.config/nvim/plugged')
@@ -37,6 +40,9 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-stylishask'
 Plug 'godlygeek/tabular'
 
+" fish
+Plug 'dag/vim-fish'
+
 " Julia
 Plug 'JuliaEditorSupport/julia-vim'
 
@@ -67,6 +73,9 @@ Plug 'ap/vim-css-color'
 " Dart
 Plug 'dart-lang/dart-vim-plugin'
 
+" Svelte
+Plug 'evanleck/vim-svelte'
+ 
 " Zen-Mode
 Plug 'Pocco81/TrueZen.nvim'
 
@@ -106,8 +115,8 @@ filetype plugin indent on " required
 syntax enable
 
 """ Set a colorcolumn to grey for orientation ----
-" set colorcolumn=120
-" hi ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=90
+hi ColorColumn ctermbg=0 guibg=lightgrey
 
 """ HS Vim Settings ------------------------------
 let g:haskell_classic_highlighting = 1
@@ -132,6 +141,16 @@ set termguicolors
 set nowrap
 set textwidth=0
 set tabstop=4 softtabstop=4 shiftwidth=4
+
+" Set tab for md and scala files to 2 spaces
+autocmd Filetype markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype scala    setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype latex setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype svelte setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 set smarttab
 set expandtab
 set smartindent
@@ -146,6 +165,10 @@ set ma
 set noswapfile
 
 """ Some Keymaps ---------------------------------
+
+" (de)capitalise the first letter in a word
+map mkU viwo<Esc>gUl
+map mku viwo<Esc>gul
 
 nmap <Leader>, :<C-u>SessionSave<CR>
 
@@ -208,9 +231,10 @@ map <F12> :TZAtaraxis<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Copilot settings
-" let g:copilot_filetypes = {
-"       \ 'markdown': v:true,
-"       \ }
+let g:copilot_filetypes = {
+      \ 'tex': v:false,
+      \ 'latex': v:false,
+      \ }
 
 " COC settings
 source ~/.config/nvim/mycoc/mycocsettings.vim
