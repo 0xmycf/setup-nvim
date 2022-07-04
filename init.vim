@@ -71,7 +71,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'ap/vim-css-color'
 
 " Dart
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dart-lang/dart-vim-plugin'
 
 " Svelte
 Plug 'evanleck/vim-svelte'
@@ -98,9 +98,9 @@ call plug#end()
 source $HOME/.config/nvim/themes/airline.vim
 
 """ Sets the appropriate colorscheme -------------
-" NOTE: technically these settings are on by default for my version!
-let g:spacegray_low_contrast = 1
-let g:spacegray_use_italics  = 1
+let g:spacegray_low_contrast    = 1
+let g:spacegray_blue_background = 0
+let g:spacegray_use_italics     = 1
 " NOTE: This is my OWN version of spacegray!
 colorscheme spacegray
 
