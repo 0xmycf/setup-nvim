@@ -8,7 +8,7 @@ set nocompatible " be iMproved, required
 filetype off     " required
 
 """ python ---------------------------------------
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/local/bin/python3.10'
 
 """ install plugins with :PlugInstall ------------
 call plug#begin('~/.config/nvim/plugged')
@@ -36,12 +36,15 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " HS
-Plug 'neovimhaskell/haskell-vim'
+Plug '0xmycf/haskell-vim'
 Plug 'alx741/vim-stylishask'
 Plug 'godlygeek/tabular'
 
 " fish
 Plug 'dag/vim-fish'
+
+" Python
+Plug '0xmycf/python-syntax'
 
 " Julia
 Plug 'JuliaEditorSupport/julia-vim'
@@ -50,7 +53,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'udalov/kotlin-vim'
 
 " Scala
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
 " Java
 Plug 'uiiaoo/java-syntax.vim'
@@ -75,7 +78,7 @@ Plug 'ap/vim-css-color'
 
 " Svelte
 Plug 'evanleck/vim-svelte'
- 
+
 " Zen-Mode
 Plug 'Pocco81/TrueZen.nvim'
 
@@ -100,7 +103,9 @@ source $HOME/.config/nvim/themes/airline.vim
 """ Sets the appropriate colorscheme -------------
 let g:spacegray_low_contrast    = 1
 let g:spacegray_blue_background = 0
-let g:spacegray_use_italics     = 1
+let g:spacegray_use_italics     = 0
+let g:spacegray_italic_types    = 1
+let g:spacegray_italic_keywords = 1
 " NOTE: This is my OWN version of spacegray!
 colorscheme spacegray
 
@@ -120,6 +125,9 @@ hi ColorColumn ctermbg=0 guibg=lightgrey
 
 """ HS Vim Settings ------------------------------
 let g:haskell_classic_highlighting = 1
+
+""" Python vim Settings --------------------------
+let g:python_highlight_all = 1
 
 """ Dashboard settings ---------------------------
 let g:dashboard_default_executive = 'telescope'
@@ -150,6 +158,9 @@ autocmd Filetype tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype latex setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype svelte setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" Disable italic keywords for rust files
+autocmd Filetype rust  hi Keyword cterm=None ctermfg=13 gui=None guifg=#A57A9E
 
 set smarttab
 set expandtab
