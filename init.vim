@@ -17,7 +17,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " and moving around
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround' " Good bye
+Plug 'kylechui/nvim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'mg979/vim-visual-multi'
 
@@ -48,6 +49,7 @@ Plug '0xmycf/python-syntax'
 
 " Julia
 Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
 " Kotlin saved for future use
 Plug 'udalov/kotlin-vim'
@@ -100,6 +102,24 @@ call plug#end()
 """ Sets the appropriate airline theme -----------
 source $HOME/.config/nvim/themes/airline.vim
 
+""" LanguageClient idk ---------------------------
+" let g:default_julia_version = '1.0'
+" language server
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+" \       using LanguageServer;
+" \       using Pkg;
+" \       import StaticLint;
+" \       import SymbolServer;
+" \       env_path = dirname(Pkg.Types.Context().env.project_file);
+" \
+" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+" \       server.runlinter = true;
+" \       run(server);
+" \   ']
+" \ }
+
 """ Sets the appropriate colorscheme -------------
 let g:spacegray_low_contrast    = 1
 let g:spacegray_blue_background = 0
@@ -127,6 +147,7 @@ hi ColorColumn ctermbg=0 guibg=lightgrey
 let g:haskell_classic_highlighting = 1
 
 """ Python vim Settings --------------------------
+let g:python_syntax_extended_keywords = 1
 let g:python_highlight_all = 1
 
 """ Dashboard settings ---------------------------
@@ -165,7 +186,7 @@ autocmd Filetype rust  hi Keyword cterm=None ctermfg=13 gui=None guifg=#A57A9E
 set smarttab
 set expandtab
 set smartindent
-set spelllang=en_gb,de
+set spelllang=en_gb,de,cjk
 set spell
 set cursorline
 set number relativenumber
@@ -258,3 +279,6 @@ source ~/.config/nvim/zen/zenconfig.vim
 
 " snippets
 source ~/.config/nvim/snippets/mysnippets.vim
+
+" nvim surround
+source ~/.config/nvim/lua/nvim-surround.vim
