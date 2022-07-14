@@ -49,16 +49,16 @@ Plug '0xmycf/python-syntax'
 
 " Julia
 Plug 'JuliaEditorSupport/julia-vim'
-" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
 " Kotlin saved for future use
-Plug 'udalov/kotlin-vim'
+" Plug 'udalov/kotlin-vim'
 
 " Scala
 " Plug 'derekwyatt/vim-scala'
+" Plug 'scalameta/nvim-metals'
 
 " Java
-Plug 'uiiaoo/java-syntax.vim'
+" Plug 'uiiaoo/java-syntax.vim'
 
 " LaTeX
 Plug 'lervag/vimtex'
@@ -270,6 +270,8 @@ let g:copilot_filetypes = {
 
 " COC settings
 source ~/.config/nvim/mycoc/mycocsettings.vim
+" Some nvim-metals specific settings
+" source ~/.config/nvim/mycoc/scala.vim
 
 " Vim settings
 source ~/.config/nvim/texsettings/texsettings.vim

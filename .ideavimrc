@@ -4,9 +4,9 @@ source ~/.config/nvim/init.vim
 " let mapleader=" "
 
 """ Plugins  --------------------------------
-" set surround
+set surround
 " set multiple-cursors
-" set commentary
+set commentary
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -23,11 +23,25 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 """ Mappings --------------------------------
-map <S-Space> <Action>(GotoNextError)
-map <leader>ac <Action>(Refactorings.QuickListPopupAction)
-map <leader><CR> <Action>(ShowIntentionActions)
-noremap gcc <Action>(CommentByLineComment)
-" noremap gd <Action>(GotoDeclaration) doesn't work...
+map <S-Space>    <Action> (GotoNextError)
+map <leader>ac   <Action> (Refactorings.QuickListPopupAction)
+map <leader><CR> <Action> (ShowIntentionActions)
+
+nmap gcc         <Action> (CommentByLineComment)
+vmap gc          <Action> (CommentByLineComment)
+
+nmap gd          <Action> (GotoDeclaration)
+nmap gu          <Action> (FindUsages)
+
+nmap <leader>gg  <Action> (Generate)
+nmap <leader>ggo <Action> (OverrideMethods)
+nmap <leader>ggi <Action> (ImplementMethods)
+
+nmap <C-t>       <Action> (ActivateProjectToolWindow)
+
+nmap qim         <Action> (QuickImplementations)
+nmap <S-e>       <Action> (ShowErrorDescription)
+
 
 """ Reccommended settings -------------------
 " Show a few lines of context around the cursor. Note that this makes the
